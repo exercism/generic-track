@@ -1,6 +1,13 @@
 Implement continuous integration
 
-Implement a track test suite that can run both locally and on Travis CI. The track test suite should verify that each exercise makes sense, by running the exercise tests against the example solution.
+Implement the "track test suite".  This suite should:
+
+- for each exercise in the track,
+  - run that exercise's test suite (aka the "exercise test suite");
+  - use the exercise's solution as the code under test.
+- ensure all test cases are enabled;
+- be executed on Travis CI;
+- be easy to run on a contributor/maintainer's local machine (i.e. a build script with any needed instructions).
 
 **Definition of terms**
 
@@ -9,34 +16,31 @@ Implement a track test suite that can run both locally and on Travis CI. The tra
 
 **Background**
 
-When implementing an exercise test suite, we want to provide a good user experience for the people writing a solution to the exercise. People should not be confused or overwhelmed.
+The goal of the "track test suite" is to ensure that the "exercise test suite"s delivered to Exercism users will work properly.  The best way to do this is to execute the exercise test suite against a known good solution — the example solution in the exercise.
 
-In most Exercism language tracks, we simulate Test-Driven Development (TDD) by implementing the tests in order of increasing complexity. We try to ensure that each test either
+_Enabling all test cases_
 
-- helps triangulate a solution to be more generic, or
-- requires new functionality incrementally.
-
-Many test frameworks will randomize the order of the tests when running them. This is an excellent practice, which helps ensure that subsequent tests are not dependent on side effects from earlier tests. However, in order to simulate TDD we want tests to run *in the order that they are defined*, and we want them to *fail fast*, that is to say, as soon as the test suite encounters a failure, we want the execution to stop. This ensures that the person implementing the solution sees only one error or failure message at a time, unless they make a change which causes prior tests to fail.
-
-This is the same experience that they would get if they were implementing each new test themselves.
-
-Most testing frameworks do not have the necessary configuration options to get this behavior directly, but they often do have a way of marking tests as _skipped_ or _pending_. The mechanism for this will vary from language to language and from test framework to test framework.
-
-Whatever the mechanism—functions, methods, annotations, directives, commenting out tests, or some other approach—these are changes made directly to the test file. The person solving the exercise will need to edit the test file in order to "activate" each subsequent test.
-
-Any tests that are marked as skipped will not be verified by the track test suite unless special care is taken.
+As described in [Contributing to Exercism: Writing exercise test suites](writing_tests.md), exercise test suites are written such that all but the first test case are skipped/pending/ignored.  For the purpose of the track test suite, all test cases should be enabled (simulating an Exercism user having completed the exercise).
 
 Additionally, in some programming languages, the name of the file containing the solution is hard-coded in the test suite, and the example solution is not named in the way that we expect people to name their files.
 
 We will need to temporarily (and programmatically) edit the exercise test suites to ensure that all of their tests are active. We may also need to rename the example solution file(s) in order for the exercise test suite to run against it.
 
-**Avoiding accidental git check-ins**
-
 It's important that if we rewrite files in any way during a test run, that these changes do not accidentally get checked in to the git repository.
 
 Therefore, many language tracks write the track test suite in such a way that it _copies_ the exercise to a temporary location outside of the git repository before editing or rewriting the exercise files during a test run.
 
-**Working around long-running track test suites**
+_Configuring Travis CI_
+
+A contributor may forget to run the track test suite before submitting a PR.  Also, sometimes a test suite will succeed even when something is wrong with the test suite on a contributor's local machine because of some artifact of their local configuration.  Running the suite on a continuous integration server (here, Travis CI) ensures the track test suite is run from scratch.
+
+In order to successfully run the track test suite, Travis may need to be configured to provide a development environment for this track's language -or- a setup script needs to be provided to perform the setup.  [Travis Docs](https://docs.travis-ci.com) enumerate the supported languages and instructions for how to customize the build.
+
+_Running locally_
+
+Having to commit and push changes to GitHub (in order to trigger the CI build) and waiting for the results can be unnecessarily laborious for someone contributing to the track.  The same build process that runs on Travis CI should be executable locally.
+
+This is usually done by capturing whatever steps are required to run the track test suite in a single script or makefile.
 
 Usually as people are developing the track, they're focused on a single exercise. If running the entire track test suite against all of the exercises takes a long time, it is often worth making it possible to verify just one exercise at a time.
 
