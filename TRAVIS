@@ -2,12 +2,13 @@ Implement continuous integration
 
 Implement the "track test suite".  This suite should:
 
-- for each exercise in the track,
-  - run that exercise's test suite (aka the "exercise test suite");
-  - use the exercise's solution as the code under test.
-- ensure all test cases are enabled;
-- be executed on Travis CI;
-- be easy to run on a contributor/maintainer's local machine (i.e. a build script with any needed instructions).
+- for each exercise in the track
+  - run that exercise's test suite (aka the "exercise test suite")
+    - ensure all test cases are enabled
+  - use the exercise's example solution as the code under test
+- be executed on Travis CI
+- be easy to run on a contributor/maintainer's local machine (i.e. a build script)
+  - with instructions on how to do so in the track's `README.md`.
 
 **Definition of terms**
 
@@ -20,19 +21,24 @@ The goal of the "track test suite" is to ensure that the "exercise test suite"s 
 
 _Enabling all test cases_
 
-As described in [Contributing to Exercism: Writing exercise test suites](writing_tests.md), exercise test suites are written such that all but the first test case are skipped/pending/ignored.  For the purpose of the track test suite, all test cases should be enabled (simulating an Exercism user having completed the exercise).
+As described in [Contributing to Exercism: writing exercise test suites](writing_tests.md), exercise test suites in most language tracks are written such that all but the first test case are skipped/pending/ignored.  For the purpose of the track test suite, all test cases should be enabled (simulating an Exercism user having completed the exercise).
 
 Additionally, in some programming languages, the name of the file containing the solution is hard-coded in the test suite, and the example solution is not named in the way that we expect people to name their files.
 
 We will need to temporarily (and programmatically) edit the exercise test suites to ensure that all of their tests are active. We may also need to rename the example solution file(s) in order for the exercise test suite to run against it.
 
-It's important that if we rewrite files in any way during a test run, that these changes do not accidentally get checked in to the git repository.
+It's important that if we rewrite files in any way during a test run, that these changes do not accidentally get checked in to the Git repository.
 
-Therefore, many language tracks write the track test suite in such a way that it _copies_ the exercise to a temporary location outside of the git repository before editing or rewriting the exercise files during a test run.
+Therefore, many language tracks write the track test suite in such a way that it _copies_ the exercise to a temporary location outside of the Git repository before editing or rewriting the exercise files during a test run.
 
-_Configuring Travis CI_
+_Configuring hosted Continuous Integration_
 
-A contributor may forget to run the track test suite before submitting a PR.  Also, sometimes a test suite will succeed even when something is wrong with the test suite on a contributor's local machine because of some artifact of their local configuration.  Running the suite on a continuous integration server (here, Travis CI) ensures the track test suite is run from scratch.
+A contributor may forget to run the track test suite before submitting a PR.  Also, sometimes a test suite will succeed even when something is wrong with the test suite on a contributor's local machine because of some artifact of their local configuration.  Running the suite on a continuous integration server ensures the track test suite is run from scratch.
+
+Which hosted CI service to use depends on the base platform of this track.
+- [AppVeyor](https://www.appveyor.com/docs/) is recommended for Microsoft-based languages.
+- [Circle CI](https://circleci.com/docs/1.0/getting-started/) is what we tend to reach for for the Apple stack.
+- [Travis CI](https://docs.travis-ci.com/user/getting-started/TRAVIS) is typically used in most other cases.
 
 In order to successfully run the track test suite, Travis may need to be configured to provide a development environment for this track's language -or- a setup script needs to be provided to perform the setup.  [Travis Docs](https://docs.travis-ci.com) enumerate the supported languages and instructions for how to customize the build.
 
