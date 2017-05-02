@@ -39,6 +39,8 @@ Test files should use the following format:
 
 Please keep the following in mind:
 
+- Special attention should be given to the tests of an exercise. These are fundamentally the "product" that is delivered to a user of Exercism.
+
 - Pull requests should be focused on a single exercise, issue, or change.
 
 - We welcome changes to code style, and wording. Please open a separate PR for these changes if possible.
