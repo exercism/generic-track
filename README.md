@@ -2,16 +2,6 @@
 
 ## How to request support for a new language track
 
-**Does the language qualify for having a track?**
-
-If you can answer yes to the following:
-
-- It is a Turing-complete programming language, so no regular expressions or web framework tracks.
-- Some kind of programming environment, compiler and/or interpreter must be freely available.
-- Preferrably, it is possible to program in this language on Mac, Windows *and* Linux.
-
-Then the language is qualified.
-
 **Does Exercism already support the language?**
 
 Check [this list][trackler-tracks], which contains both the active and inactive tracks on the site.
@@ -25,6 +15,16 @@ Do a search in this repository for the name of the language. Remember to check b
 
 [new-issue]: https://github.com/exercism/request-new-language-track/issues/new
 [trackler-tracks]: https://github.com/exercism/trackler/tree/master/tracks
+
+**Does the language qualify for having a track?**
+
+If you can answer yes to the following:
+
+- It is a Turing-complete programming language, so no regular expressions or web framework tracks.
+- Some kind of programming environment, compiler and/or interpreter must be freely available.
+- Preferrably, it is possible to program in this language on Mac, Windows *and* Linux.
+
+Then send in a request!
 
 ## How to improve the process for the next new maintainer
 
