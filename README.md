@@ -9,12 +9,11 @@ Check [this list][trackler-tracks], which contains both the active and inactive 
 If you find the language, follow the links from that list to view the repository. The `config.json` file
 has an `active` key, which will be true or false.
 
+[trackler-tracks]: https://github.com/exercism/trackler/tree/master/tracks
+
 **Has someone else asked for it?**
 
 Do a search in this repository for the name of the language. Remember to check both open and closed issues.
-
-[new-issue]: https://github.com/exercism/request-new-language-track/issues/new
-[trackler-tracks]: https://github.com/exercism/trackler/tree/master/tracks
 
 **Does the language qualify for having a track?**
 
@@ -24,7 +23,9 @@ If you can answer yes to the following:
 - Some kind of programming environment, compiler and/or interpreter must be freely available.
 - Preferrably, it is possible to program in this language on Mac, Windows *and* Linux.
 
-Then send in a request!
+Then [send in a request][new-issue]!
+
+[new-issue]: https://github.com/exercism/request-new-language-track/issues/new
 
 ## How to improve the process for the next new maintainer
 
