@@ -4,7 +4,7 @@
 
 Please [search our repositories](https://github.com/exercism), to see both active and inactive tracks on the site.
 
-If you find the language, check the he `config.json` file to see if it has an `active` key, which will be true or false. If you'd like to help out, please open an issue on that repository to say hello.
+If you find the language, check the the `config.json` file to see if it has an `active` key, which will be true or false. If you'd like to help out, please open an issue on that repository to say hello.
 
 ## Has someone else asked for it?
 
