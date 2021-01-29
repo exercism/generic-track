@@ -33,9 +33,9 @@ In some cases, we might discover that we're missing high-level documentation tha
 repo, in which case we should open an issue or pull request there, proposing the new documentation. Tag the new
 maintainer there, as well, to get their input on the new docs.
 
-[checklist]: https://github.com/exercism/request-new-language-track/blob/master/CHECKLIST.md
+[checklist]: https://github.com/exercism/request-new-language-track/blob/main/CHECKLIST.md
 [docs]: https://github.com/exercism/docs
-[issue-templates]: https://github.com/exercism/request-new-language-track/blob/master/bin/bootstrap#L67-L73
+[issue-templates]: https://github.com/exercism/request-new-language-track/blob/main/bin/bootstrap#L67-L73
 
 ---
 
@@ -69,7 +69,7 @@ maintainer there, as well, to get their input on the new docs.
 [travis]: https://travis-ci.org/profile/exercism
 [appveyor]: https://ci.appveyor.com/projects/new
 [circle]: https://circleci.com/gh/organizations/exercism/settings#projects
-[trackler]: https://github.com/exercism/trackler/tree/master/tracks
+[trackler]: https://github.com/exercism/trackler/tree/main/tracks
 [new-team]: https://github.com/orgs/exercism/new-team
 ```
 

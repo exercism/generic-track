@@ -5,7 +5,7 @@ Edit this issue to keep track of the tasks you're working on towards launch.
 We have a rough guide for how to launch a track, which is sorely outdated but
 quite possibly better than nothing (I'm so sorry, I'm waaaay behind on getting
 documentation updated).
-https://github.com/exercism/docs/blob/master/language-tracks/launch/README.md
+https://github.com/exercism/docs/blob/main/language-tracks/launch/README.md
 
 Check out https://github.com/orgs/exercism/teams/track-maintainers/discussions/1
 for details about the #maintainers channel in the exercism-team Slack workspace.

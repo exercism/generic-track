@@ -97,7 +97,7 @@ if !system("hub create exercism/%s" % track_id)
   exit 1
 end
 
-if !system("git push origin master")
+if !system("git push origin main")
   exit 1
 end
 
