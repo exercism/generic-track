@@ -1,10 +1,24 @@
 {
-  "track_id": "{{TRACK_ID}}",
   "language": "{{LANGUAGE}}",
+  "slug": "{{TRACK_ID}}",
   "active": false,
+  "status": {
+    "concept_exercises": false,
+    "test_runner": false,
+    "representer": false,
+    "analyzer": false
+  },
   "blurb": "",
-  "ignore_pattern": "[Ee]xample",
-  "solution_pattern": "[Ee]xample",
-  "test_pattern": "[Tt]est",
-  "exercises": null
+  "version": 3,
+  "online_editor": {
+    "indent_style": "space",
+    "indent_size": 4
+  },
+  "exercises": {
+    "concept": [],
+    "practice": []
+  },
+  "concepts": [],
+  "key_features": [],
+  "tags": []
 }
