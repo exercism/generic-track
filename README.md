@@ -72,9 +72,9 @@ maintainer there, as well, to get their input on the new docs.
 1. Add the "new track" label.
 1. Confirm maintainer
 
-- If the requestor is volunteering, that's fine.
-- If the requestor is volunteering someone else for the job, confirm with that person.
-- If there is no maintainer, label with "needs maintainer"
+   - If the requestor is volunteering, that's fine.
+   - If the requestor is volunteering someone else for the job, confirm with that person.
+   - If there is no maintainer, label with "needs maintainer"
 
 1. Once a maintainer is confirmed, add the "new track" checklist as a reply.
 1. Once the checklist is complete, let the requestor/maintainer know that the repo is ready for them,
