@@ -8,6 +8,6 @@ documentation updated).
 https://github.com/exercism/legacy-docs/blob/main/language-tracks/launch/README.md
 
 Check out https://github.com/orgs/exercism/teams/track-maintainers/discussions/1
-for details about the #maintaining-\<track\> channels in the exercism-team Slack workspace.
+for details about the #maintaining-\<track\> channels and private #maintainers channel in the exercism-team Slack workspace.
 
 Please ask if you have any questions or if anything is confusing!
