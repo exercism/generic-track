@@ -16,6 +16,12 @@
     "ace_editor_language": "",
     "highlightjs_language": ""
   },
+  "files": {
+    "solution": [],
+    "test": [],
+    "example": [],
+    "exemplar": []
+  },
   "exercises": {
     "concept": [],
     "practice": []
