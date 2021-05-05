@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# This file is a copy of the
+# https://github.com/exercism/configlet/blob/main/scripts/fetch-configlet file.
+# Please submit bugfixes/improvements to the above file to ensure that all tracks
+# benefit from the changes.
+
 set -eo pipefail
 
 readonly LATEST='https://api.github.com/repos/exercism/configlet/releases/latest'
