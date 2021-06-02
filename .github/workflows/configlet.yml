@@ -16,3 +16,6 @@ jobs:
 
       - name: Configlet Linter
         run: configlet lint
+
+      - name: Ensure valid JSON
+        run: jq '.' config.json
