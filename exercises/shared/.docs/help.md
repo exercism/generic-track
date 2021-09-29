@@ -1,7 +1,6 @@
 # Help
 
-<!--
-  TODO: write document
+<!-- TODO: write document
 
   This document should contain track-specific instructions on how to get help when
   the student is stuck.

@@ -1,7 +1,6 @@
 # Tests
 
-<!--
-  TODO: write document
+<!-- TODO: write document
 
   This document should contain instructions on how to run the exercise's tests.
 
