@@ -7,7 +7,7 @@ The next steps are (roughly):
 - [ ] Join our Slack community
 - [ ] Select programming language variant (if applicable)
 - [ ] Select testing framework
-- [ ] Add `hello-world` exercise
+- [ ] Implement the first exercise
 - [ ] Add 20+ initial exercises
 - [ ] Add the track to the site as inactive
 - [ ] Request a track icon
@@ -22,12 +22,12 @@ This is a great place to plan your track and to get help from other maintainers.
 It is also the place where we'll regularly post the things we're working on.
 To get access to this workspace, please email erik@exercism.io.
 
-## Installation and dependencies
+## Select programming language variant (if applicable)
 
-Before you can start implementing exercises, you'll need to make some decisions.
+Some programming languages have multiple variants. If that is the case, we should decide upon one variant that we'll support.
+Ignore this step if your languages does _not_ have multiple variants.
 
-1. Which variant of the programming language to support (if there are multiple).
-1. Which testing framework to use.
+## Select testing framework
 
 All of the exercises are based on providing a failing test suite for people to run and make pass, so we need to pick a testing framework.
 If there are multiple testing frameworks available, we'll need to figure out which one is the best fit.
@@ -50,7 +50,7 @@ Remember that all Exercism exercises are by nature very small, so there's no nee
 
 ### Document the decisions
 
-As you make these decisions, document them in the README.md of the repository for
+As you make these decisions, document them in this repository's README.md for
 contributors and future maintainers. In particular, when someone submits a contribution
 that goes against one of these decisions, it's very helpful to be able to point to not just
 the conclusion, but also a bit about why that decision was made. That makes it easier to
@@ -62,7 +62,7 @@ The harder the decision was to make, the more important it is to document it tho
 
 ## Implement the first exercise
 
-The first exercise will be a very simple "Hello, World!".
+The first exercise will be a very simple "Hello, World!" exercise.
 In some rare cases, this might not be the best choice.
 If so let's discuss how to proceed.
 
