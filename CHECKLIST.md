@@ -157,14 +157,6 @@ It could be worth opening separate issues for the things you wish to tackle.
 Once you've gotten the track into a state where others can contribute, update the
 README to provide guidelines for contribution.
 
-## Slack
-
-Check out https://github.com/orgs/exercism/teams/track-maintainers/discussions/1
-for details about the #maintaining-\<track\> channels and private #maintainers channel in the exercism-team Slack workspace.
-
 ## Questions
-
-Check out https://github.com/orgs/exercism/teams/track-maintainers/discussions/1
-for details about the #maintaining-\<track\> channels and private #maintainers channel in the exercism-team Slack workspace.
 
 Please ask if you have any questions or if anything is confusing!
