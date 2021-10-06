@@ -2,13 +2,16 @@
 
 ## Does Exercism already support the language?
 
-Please [search our repositories](https://github.com/exercism), to see both active and inactive tracks on the site.
+Please [check the list of track repositories](https://github.com/search?q=topic%3Aexercism-track+org%3Aexercism+fork%3Atrue&type=repositories) to find both active and inactive tracks.
+If you found a repository for your language, check the `active` key's value in the repository's `config.json` file for its status:
 
-If you find the language, check the `config.json` file to see if it has an `active` key, which will be true or false. If you'd like to help out, please open an issue on that repository to say hello.
+- `true`: the track is active and listed on the website's [tracks page](https://exercism.org/tracks).
+- `false`: the track is inactive and not listed on the website. The track still requires work for it to become active. If you'd like to help out, please open an issue on that repository to say hello.
 
 ## Has someone else asked for it?
 
-Do a search in the issues in this repository for the name of the language. Remember to check both open and closed issues.
+Do a search in the [issues of this repository](https://github.com/exercism/request-new-language-track/issues) for the name of the language to see if the language was already requested.
+Remember to check both open and closed issues.
 
 ## It doesn't exist - I want to create it!
 
