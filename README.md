@@ -3,7 +3,7 @@
 ## Does Exercism already support the language?
 
 Please [check the list of track repositories](https://github.com/search?q=topic%3Aexercism-track+org%3Aexercism+fork%3Atrue&type=repositories) to find both active and inactive tracks.
-If you found a repository for your language, check the `active` key's value in the repository's `config.json` file for its status:
+If you find a repository for your language, check the `active` key's value in the repository's `config.json` file for its status:
 
 - `true`: the track is active and listed on the website's [tracks page](https://exercism.org/tracks).
 - `false`: the track is inactive and not listed on the website. The track still requires work for it to become active. If you'd like to help out, please open an issue on that repository to say hello.
@@ -19,7 +19,7 @@ Awesome!! Please open a [new issue](https://github.com/exercism/request-new-lang
 
 ## How to improve the process for the next new maintainer
 
-It's crucial that we improve the documentation and instructions for launching a track. The best people to discover
+It is crucial that we improve the documentation and instructions for launching a track. The best people to discover
 issues with our current process are new maintainers, launching a track for the first time. Unfortunately,
 that's the worst possible time for them to fix the documentation, because they've got the least amount of
 knowledge about how Exercism is put together.
@@ -28,15 +28,12 @@ The files in this repository serve as a template for a new track. Some files get
 others are used to [create new issues in the track][issue-templates], but are not added to the new repository.
 If new maintainers have questions, it will often be because these files are confusing or missing information.
 
-When that happens we should tweak the documentation for clarity in a new pull request to the request-new-language-track
-repository (not their repository) and tag the maintainer to review it. If it's still confusing, they'll know,
-and figuring out how to explain it will help us fix it.
+When that happens we should tweak the documentation for clarity in a new pull request to the request-new-language-track repository (not their repository) and tag the maintainer to review it. If it is still confusing, they will know, and figuring out how to explain it will help us fix it.
 
-In some cases, we might discover that we're missing high-level documentation that should live in the [docs][]
-repo, in which case we should open an issue or pull request there, proposing the new documentation. Tag the new
-maintainer there, as well, to get their input on the new docs.
+In some cases, we might discover that we're missing high-level documentation that should live in the [docs][docs]
+repo, in which case we should open an issue or pull request there, proposing the new documentation.
+Tag the new maintainer there, as well, to get their input on the new docs.
 
-[checklist]: https://github.com/exercism/request-new-language-track/blob/main/CHECKLIST.md
 [docs]: https://github.com/exercism/docs
 [issue-templates]: https://github.com/exercism/request-new-language-track/blob/main/bin/bootstrap#L67-L73
 
