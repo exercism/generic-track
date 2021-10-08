@@ -16,6 +16,8 @@ The next steps are:
 - [ ] [Implement tooling](https://exercism.org/docs/building/tracks/new/implement-tooling)
 - [ ] [Prepare for open source contributions from strangers](https://exercism.org/docs/building/tracks/new/prepare-for-contributions)
 
+Once you've finished a task, you can check them in this list.
+
 ## Questions
 
 Please ask if you have any questions or if anything is confusing!
