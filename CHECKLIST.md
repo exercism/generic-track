@@ -13,6 +13,7 @@ The next steps are:
 - [ ] [Prepare for launch](https://exercism.org/docs/building/tracks/new/prepare-for-launch)
 - [ ] [Find Maintainers](https://exercism.org/docs/building/tracks/new/find-maintainers)
 - [ ] [Launch!](https://exercism.org/docs/building/tracks/new/launch)
+- [ ] [Implement tooling](https://exercism.org/docs/building/tracks/new/implement-tooling)
 - [ ] [Prepare for open source contributions from strangers](https://exercism.org/docs/building/tracks/new/prepare-for-contributions)
 
 ## Questions
