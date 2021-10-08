@@ -11,13 +11,14 @@
 # - https://github.com/marketplace?type=actions&query=setup
 #
 # Requires scripts:
-# - bin/ci
+# - bin/test
 
-name: <track> / main
+name: <track> / Test
 
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -34,5 +35,5 @@ jobs:
       - name: Install project dependencies
         run: <install dependencies>
 
-      - name: Run exercism/<track> ci (runs tests) for all exercises
-        run: bin/ci
+      - name: Run tests for all exercises
+        run: bin/test
