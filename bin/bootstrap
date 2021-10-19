@@ -129,3 +129,6 @@ team_options = {
 }
 team = client.create_team('exercism', team_options.merge(accept: 'application/vnd.github.hellcat-preview+json'))
 client.add_team_repository(team.id, 'exercism/%s' % track_id, permission: 'push')
+
+maintainers_admin_team = client.get('/orgs/exercism/teams/maintainers-admin')
+client.add_team_repository(maintainers_admin_team.id, 'exercism/%s' % track_id, permission: 'maintain')
