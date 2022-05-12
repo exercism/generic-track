@@ -113,7 +113,7 @@ client = Octokit::Client.new(access_token: ENV['ADMIN_ORG_TOKEN'])
 repo_options = {
   :name => track_id,
   :description => "Exercism exercises in %s" % language,
-  :homepage => "http://exercism.io/tracks/%s" % track_id,
+  :homepage => "https://exercism.org/tracks/%s" % track_id,
   :has_projects => false,
   :has_wiki => false,
 }
