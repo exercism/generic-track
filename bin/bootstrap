@@ -8,6 +8,7 @@ rescue LoadError => e
 end
 require 'date'
 require 'fileutils'
+require 'securerandom'
 
 track_id = ENV['TRACK_ID']
 language = ENV['LANGUAGE']
@@ -85,6 +86,12 @@ f = File.join(dir, 'LICENSE')
 contents = File.read(f)
 File.open(f, "w") do |f|
   f.write contents.gsub(/\d{4}/, Date.today.year.to_s)
+end
+
+f = File.join(dir, 'docs', 'config.json')
+contents = File.read(f)
+File.open(f, "w") do |f|
+  f.write contents.gsub('{{UUID}}') {|m| SecureRandom.uuid }
 end
 
 [
