@@ -82,12 +82,6 @@ system("rm -rf %s" % File.join(dir, "bin/bootstrap"))
 system("rm -rf %s" % File.join(dir, ".github/ISSUE_TEMPLATE.md"))
 system("mv %s/TRACK_README.md %s/README.md" % [dir, dir])
 
-f = File.join(dir, 'LICENSE')
-contents = File.read(f)
-File.open(f, "w") do |f|
-  f.write contents.gsub(/\d{4}/, Date.today.year.to_s)
-end
-
 f = File.join(dir, 'docs', 'config.json')
 contents = File.read(f)
 File.open(f, "w") do |f|
