@@ -1,5 +1,7 @@
 Launch tracking
 
+Overall documentation for building an Exercism track lives at https://exercism.org/docs/building/tracks/new
+
 This issue helps keep track of the tasks you're working on towards launching this track.
 
 The next steps are:
