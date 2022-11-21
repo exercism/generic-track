@@ -12,8 +12,8 @@ $requestOpts = @{
     RetryIntervalSec  = 1
 }
 
-$arch = If ([Environment]::Is64BitOperatingSystem) { "64bit" } Else { "32bit" }
-$fileName = "configlet-windows-$arch.zip"
+$arch = If ([Environment]::Is64BitOperatingSystem) { "x86-64" } Else { "i386" }
+$fileName = "configlet_.+_windows_$arch.zip"
 
 Function Get-DownloadUrl {
     $latestUrl = "https://api.github.com/repos/exercism/configlet/releases/latest"
