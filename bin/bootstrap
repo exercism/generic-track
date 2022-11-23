@@ -71,7 +71,7 @@ if File.exist?(dir)
   STDERR.puts("FATAL: %s already exists" % track_id)
 end
 
-template = File.expand_path("../../../request-new-language-track", __FILE__)
+template = File.expand_path("../../../generic-track", __FILE__)
 
 system("cp -r %s %s" % [template, dir])
 system("rm -rf %s" % File.join(dir, ".git"))
