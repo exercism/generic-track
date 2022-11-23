@@ -1,3 +1,6 @@
+Note: this issue will be closed automatically.
+If you have discussed this in the forum beforehand as described in the README of this repository, and the request has been approved, please add a link to the forum thread, and a member of the team will reopen this issue.
+
 **What programming language should we add?**
 
 **What is the official website for the language?**
@@ -25,3 +28,5 @@
 **If it is not supported by Highlightjs, what is the closest supported language it maps to?**
 
 **Who will be leading the effort to launch the track?**
+
+Please post the GitHub usernames of everyone who will be building the track so we can add them to the team that has write-access to the repository.
