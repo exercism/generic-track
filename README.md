@@ -1,5 +1,20 @@
 # Request a new Exercism language track
 
+If you wish to request a new track, **you must post in the [Support category on the Exercism Community Forum][forum-support]** to discuss this with the team.
+
+Before opening the post, it's worth considering:
+- Is it a programming language?
+- Does Exercism already support the language?
+- Has anyone else asked for it?
+- Will you be available to actively build and launch the track?
+
+## Is it a programming language?
+
+At Exercism we provide a learning platform for developers who want to practice a programming language or learn a new one.
+
+If the language is a general purpose programming language, then we'll probably be interested in having the track on Exercism.
+We do not create tracks for tools, libraries, frameworks, or technologies.
+
 ## Does Exercism already support the language?
 
 Please [check the list of track repositories][track-repositories] to find both active and inactive tracks.
@@ -15,26 +30,22 @@ If you find a repository for your language, check the `active` key's value in th
 Do a search in the [issues of this repository][this-repo-issues] for the name of the language to see if the language was already requested.
 Remember to check both open and closed issues.
 
+## Will you be available to actively build and launch the track?
+
+Exercism is a not-for-profit organization, and all the language tracks are built by volunteers.
+We will only create a track if there is at least one volunteer who has offered to take the lead on building it.
+
+The minimum to launch a track is:
+- 20 practice exercises (these can be based on specifications in the [problem-specifications][] repository.
+- Continuous integration that checks that the exercises can be solved.
+- A bit of configuration and documentation.
+
+We are available to guide you along the way, and you can also get help from the community of folks who have done this for other languages.
+
 ## It doesn't exist - I want to create it!
 
-Awesome!! Please open a [new issue][new-issue], filling out the template.
-We'll take a look!
-
-## How to improve the process for the next new maintainer
-
-It is crucial that we improve the documentation and instructions for launching a track.
-The best people to discover issues with our current process are new maintainers, launching a track for the first time.
-Unfortunately, that's the worst possible time for them to fix the documentation, because they've got the least amount of knowledge about how Exercism is put together.
-
-The files in this repository serve as a template for a new track.
-Some files get edited and added to the track, others are used to [create new issues in the track][issue-templates], but are not added to the new repository.
-If new maintainers have questions, it will often be because these files are confusing or missing information.
-
-When that happens we should tweak the documentation for clarity in a new pull request to the request-new-language-track repository (not their repository) and tag the maintainer to review it.
-If it is still confusing, they will know, and figuring out how to explain it will help us fix it.
-
-In some cases, we might discover that we're missing high-level documentation that should live in the [docs][docs] repo, in which case we should open an issue or pull request there, proposing the new documentation.
-Tag the new maintainer there, as well, to get their input on the new docs.
+Awesome!! Please create a new post in the [Exercism Forum][forum-support] so we can discuss the details.
+If the new track is authorized, then create a [new-issue][] in this repository, and we'll create the new repository for the track.
 
 ---
 
@@ -47,7 +58,7 @@ Tag the new maintainer there, as well, to get their input on the new docs.
 ### One-time setup
 
 1. Install [hub][].
-1. Clone the [request-new-language-track][] repository.
+1. Clone the [generic-track][] repository.
 
 ### Bootstrap a Track
 
@@ -56,16 +67,16 @@ Tag the new maintainer there, as well, to get their input on the new docs.
 
    - If the requestor is volunteering, that's fine.
    - If the requestor is volunteering someone else for the job, confirm with that person.
-   - If there is no maintainer, label with "needs maintainer"
 
 1. Run `bin/bootstrap`
 1. Let the requestor/maintainer know that the repo is ready for them, and point them to the launch checklist issue.
 
-[request-new-language-track]: https://github.com/exercism/request-new-language-track
+[generic-track]: https://github.com/exercism/generic-track
 [hub]: http://github.com/github/hub
 [track-repositories]: https://github.com/search?q=topic%3Aexercism-track+org%3Aexercism+fork%3Atrue&type=repositories
 [exercism-tracks]: https://exercism.org/tracks
-[this-repo-issues]: https://github.com/exercism/request-new-language-track/issues
-[new-issue]: https://github.com/exercism/request-new-language-track/issues/new
+[this-repo-issues]: https://github.com/exercism/generic-track/issues
+[new-issue]: https://github.com/exercism/generic-track/issues/new
 [docs]: https://github.com/exercism/docs
-[issue-templates]: https://github.com/exercism/request-new-language-track/blob/main/bin/bootstrap#L67-L73
+[issue-templates]: https://github.com/exercism/generic-track/blob/main/bin/bootstrap#L67-L73
+[forum-support]: https://forum.exercism.org/c/support/8
