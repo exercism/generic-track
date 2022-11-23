@@ -44,7 +44,7 @@ We are available to guide you along the way, and you can also get help from the 
 
 ## It doesn't exist - I want to create it!
 
-Awesome!! Please create a new post in the [Exercism Forum][forum-support] so we can discuss the details.
+Awesome! Please create a new post in the [Exercism Forum][forum-support] so we can discuss the details.
 If the new track is authorized, then create a [new-issue][] in this repository, and we'll create the new repository for the track.
 
 ---
