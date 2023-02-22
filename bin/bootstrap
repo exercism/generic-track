@@ -53,6 +53,10 @@ url = "https://api.github.com/user"
 }.each do |token, value|
   response = HTTParty.head(url, headers: {"Authorization" => "Bearer #{value}"})
   expiration = response.headers["github-authentication-token-expiration"]
+  if expiration.nil?
+    STDERR.puts ("%s is expired" % token)
+    exit
+  end
   puts expiration
   format = "%Y-%m-%d %H:%M:%S %Z"
   timestamp = DateTime.strptime(expiration, format)
