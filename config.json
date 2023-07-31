@@ -12,8 +12,7 @@
   "version": 3,
   "online_editor": {
     "indent_style": "space",
-    "indent_size": 4,
-    "highlightjs_language": "TODO: specify highlightjs language"
+    "indent_size": 4
   },
   "files": {
     "solution": [],
