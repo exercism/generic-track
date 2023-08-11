@@ -80,3 +80,4 @@ If the new track is authorized, then create a [new-issue][] in this repository, 
 [docs]: https://github.com/exercism/docs
 [issue-templates]: https://github.com/exercism/generic-track/blob/main/bin/bootstrap#L67-L73
 [forum-support]: https://forum.exercism.org/c/support/8
+[problem-specifications]: https://github.com/exercism/problem-specifications
