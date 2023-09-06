@@ -18,26 +18,18 @@ if !(track_id && language)
   exit 1
 end
 
-unless system("hub --version")
-  STDERR.puts "\nYou need to install github/hub. Try brew install hub."
+unless system("gh --version")
+  STDERR.puts "\nYou need to install gh. See https://cli.github.com/."
   exit 1
 end
-unless File.exist?(File.expand_path("~/.config/hub"))
-  STDERR.puts "\nYou need to authenticate with hub, but because of 2FA it might be a pain. Instead..."
-  STDERR.puts "1. Create a personal access token on github.com (settings > developer tools > personal access tokens)"
-  STDERR.puts "2. Create a file at ~/.config/hub with the following in it:\n\n"
-  config = <<~CONFIG
-github.com:
-- user: YOUR_GITHUB_USERNAME
-  oauth_token: THE_PERSONAL_ACCESS_TOKEN
-  protocol: https
-  CONFIG
-  STDERR.puts config
+unless system("gh auth status")
+  # Not tested. I'm just assuming it will return non-zero status if not logged in.
+  STDERR.puts("\nYou need to authenticate. Run 'gh auth login'.")
   exit 1
 end
 
 unless ENV["ADMIN_ORG_TOKEN"]
-  STDERR.puts "\nOctokit needs a separate Personal Access Token than hub uses."
+  STDERR.puts "\nOctokit needs a separate Personal Access Token than gh uses."
   STDERR.puts "\n'Create a personal access token with the admin scope."
   STDERR.puts "\n'Store it in your shell config in an environment variable named ADMIN_ORG_TOKEN."
   exit 1
@@ -47,23 +39,21 @@ end
 require 'yaml'
 require 'httparty'
 url = "https://api.github.com/user"
-{
-  "ADMIN_ORG_TOKEN" => ENV["ADMIN_ORG_TOKEN"],
-  "HUB_TOKEN" => YAML.load_file(File.expand_path("~/.config/hub"))["github.com"].first["oauth_token"],
-}.each do |token, value|
-  response = HTTParty.head(url, headers: {"Authorization" => "Bearer #{value}"})
-  expiration = response.headers["github-authentication-token-expiration"]
-  if expiration.nil?
-    STDERR.puts ("%s is expired" % token)
-    exit
-  end
-  puts expiration
-  format = "%Y-%m-%d %H:%M:%S %Z"
-  timestamp = DateTime.strptime(expiration, format)
-  now = DateTime.now.new_offset(0)
-  if timestamp < now
-    puts "#{token} is expired"
-  end
+token = "ADMIN_ORG_TOKEN"
+value = ENV["ADMIN_ORG_TOKEN"]
+response = HTTParty.head(url, headers: {"Authorization" => "Bearer #{value}"})
+expiration = response.headers["github-authentication-token-expiration"]
+if expiration.nil?
+  STDERR.puts ("%s is expired" % token)
+  exit 1
+end
+puts expiration
+format = "%Y-%m-%d %H:%M:%S %Z"
+timestamp = DateTime.strptime(expiration, format)
+now = DateTime.now.new_offset(0)
+if timestamp < now
+  puts "#{token} is expired"
+  exit 1
 end
 
 tracks_dir = File.expand_path("../../../tracks", __FILE__)
@@ -127,8 +117,8 @@ if system("git branch | grep master")
 end
 puts
 puts
-if !system("hub create exercism/%s" % track_id)
-  STDERR.puts "Ok, this might be failing because of 2FA. Try creating a personal access token with 'repos' and 'workflows' enabled, and use that instead of your password to log in when hub asks for username/password."
+if !system("gh repo create --public --source=. --remote=origin --push exercism/#{track_id}")
+  STDERR.puts "Failed to create the repo. Will need to debug."
   exit 1
 end
 
@@ -136,7 +126,7 @@ if !system("git push origin main")
   exit 1
 end
 
-if !system("hub issue create -F CHECKLIST.md")
+if !system("gh issue create --title=\"Launch tracking\" --body-file CHECKLIST.md")
   exit 1
 end
 
