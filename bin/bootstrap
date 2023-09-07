@@ -28,34 +28,7 @@ unless system("gh auth status")
   exit 1
 end
 
-unless ENV["GITHUB_TOKEN"]
-  STDERR.puts "\nOctokit needs a separate Personal Access Token than gh uses."
-  STDERR.puts "\n'Create a personal access token with the admin scope."
-  STDERR.puts "\n'Store it in your shell config in an environment variable named GITHUB_TOKEN."
-  exit 1
-end
-
 # Ensure tokens are still active.
-require 'yaml'
-require 'httparty'
-url = "https://api.github.com/user"
-token = "GITHUB_TOKEN"
-value = ENV["GITHUB_TOKEN"]
-response = HTTParty.head(url, headers: {"Authorization" => "Bearer #{value}"})
-expiration = response.headers["github-authentication-token-expiration"]
-if expiration.nil?
-  STDERR.puts ("%s is expired" % token)
-  exit 1
-end
-puts expiration
-format = "%Y-%m-%d %H:%M:%S %Z"
-timestamp = DateTime.strptime(expiration, format)
-now = DateTime.now.new_offset(0)
-if timestamp < now
-  puts "#{token} is expired"
-  exit 1
-end
-
 tracks_dir = File.expand_path("../../../tracks", __FILE__)
 FileUtils.mkdir_p(tracks_dir)
 
@@ -130,7 +103,8 @@ if !system("gh issue create --title=\"Launch tracking\" --body-file CHECKLIST.md
   exit 1
 end
 
-client = Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
+access_token = `gh auth token`
+client = Octokit::Client.new(access_token:)
 
 repo_options = {
   :name => track_id,
