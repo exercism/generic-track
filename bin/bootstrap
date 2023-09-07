@@ -28,10 +28,10 @@ unless system("gh auth status")
   exit 1
 end
 
-unless ENV["ADMIN_ORG_TOKEN"]
+unless ENV["GITHUB_TOKEN"]
   STDERR.puts "\nOctokit needs a separate Personal Access Token than gh uses."
   STDERR.puts "\n'Create a personal access token with the admin scope."
-  STDERR.puts "\n'Store it in your shell config in an environment variable named ADMIN_ORG_TOKEN."
+  STDERR.puts "\n'Store it in your shell config in an environment variable named GITHUB_TOKEN."
   exit 1
 end
 
@@ -39,8 +39,8 @@ end
 require 'yaml'
 require 'httparty'
 url = "https://api.github.com/user"
-token = "ADMIN_ORG_TOKEN"
-value = ENV["ADMIN_ORG_TOKEN"]
+token = "GITHUB_TOKEN"
+value = ENV["GITHUB_TOKEN"]
 response = HTTParty.head(url, headers: {"Authorization" => "Bearer #{value}"})
 expiration = response.headers["github-authentication-token-expiration"]
 if expiration.nil?
@@ -130,7 +130,7 @@ if !system("gh issue create --title=\"Launch tracking\" --body-file CHECKLIST.md
   exit 1
 end
 
-client = Octokit::Client.new(access_token: ENV['ADMIN_ORG_TOKEN'])
+client = Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
 
 repo_options = {
   :name => track_id,
