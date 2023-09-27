@@ -10,11 +10,11 @@ require 'date'
 require 'fileutils'
 require 'securerandom'
 
-track_id = ENV['TRACK_ID']
+slug = ENV['SLUG']
 language = ENV['LANGUAGE']
 
-if !(track_id && language)
-  STDERR.puts "\nUsage: LANGUAGE=<language> TRACK_ID=<id> USERNAMES=<comma,separated,list> bin/bootstrap"
+if !(slug && language)
+  STDERR.puts "\nUsage: LANGUAGE=<language> SLUG=<slug> USERNAMES=<comma,separated,list> bin/bootstrap"
   exit 1
 end
 
@@ -32,10 +32,10 @@ end
 tracks_dir = File.expand_path("../../../tracks", __FILE__)
 FileUtils.mkdir_p(tracks_dir)
 
-dir = File.join(tracks_dir, track_id)
+dir = File.join(tracks_dir, slug)
 
 if File.exist?(dir)
-  STDERR.puts("FATAL: %s already exists" % track_id)
+  STDERR.puts("FATAL: %s already exists" % slug)
 end
 
 template = File.expand_path("../../../generic-track", __FILE__)
@@ -71,7 +71,7 @@ end
   f = File.join(dir, name)
   contents = File.read(f)
   File.open(f, "w") do |f|
-    f.write contents.gsub("{{TRACK_ID}}", track_id).gsub("{{LANGUAGE}}", language)
+    f.write contents.gsub("{{SLUG}}", slug).gsub("{{LANGUAGE}}", language)
   end
 end
 
@@ -90,7 +90,7 @@ if system("git branch | grep master")
 end
 puts
 puts
-if !system("gh repo create --public --source=. --remote=origin --push exercism/#{track_id}")
+if !system("gh repo create --public --source=. --remote=origin --push exercism/#{slug}")
   STDERR.puts "Failed to create the repo. Will need to debug."
   exit 1
 end
@@ -107,33 +107,33 @@ access_token = `gh auth token`
 client = Octokit::Client.new(access_token:)
 
 repo_options = {
-  :name => track_id,
+  :name => slug,
   :description => "Exercism exercises in %s." % language,
-  :homepage => "https://exercism.org/tracks/%s" % track_id,
+  :homepage => "https://exercism.org/tracks/%s" % slug,
   :has_projects => false,
   :has_wiki => false,
 }
-repo = client.edit_repository("exercism/%s" % track_id, repo_options)
+repo = client.edit_repository("exercism/%s" % slug, repo_options)
 
-client.put('/repos/exercism/%s/topics' % track_id, {names: ["exercism-track"], accept: 'application/vnd.github.mercy-preview+json'})
+client.put('/repos/exercism/%s/topics' % slug, {names: ["exercism-track"], accept: 'application/vnd.github.mercy-preview+json'})
 
 team_options = {
-  :name => track_id,
+  :name => slug,
   :description => "Maintainers of the Exercism %s track" % language,
   :privacy => 'closed',
   :parent_team_id => 1399433,
 }
 team = client.create_team('exercism', team_options.merge(accept: 'application/vnd.github.hellcat-preview+json'))
 user = client.get("/user")
-client.delete("/orgs/exercism/teams/#{track_id}/memberships/#{user.login}")
-client.add_team_repository(team.id, 'exercism/%s' % track_id, permission: 'push')
+client.delete("/orgs/exercism/teams/#{slug}/memberships/#{user.login}")
+client.add_team_repository(team.id, 'exercism/%s' % slug, permission: 'push')
 
 maintainers_admin_team = client.get('/orgs/exercism/teams/maintainers-admin')
-client.add_team_repository(maintainers_admin_team.id, 'exercism/%s' % track_id, permission: 'maintain')
+client.add_team_repository(maintainers_admin_team.id, 'exercism/%s' % slug, permission: 'maintain')
 
 ENV['USERNAMES'].to_s.split(",").each do |username|
   begin
-    client.put("/orgs/exercism/teams/#{track_id}/memberships/#{username}", { role: "member" })
+    client.put("/orgs/exercism/teams/#{slug}/memberships/#{username}", { role: "member" })
   rescue
     # if a user can't be added, just keep going
   end
