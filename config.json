@@ -1,6 +1,6 @@
 {
   "language": "{{LANGUAGE}}",
-  "slug": "{{TRACK_ID}}",
+  "slug": "{{SLUG}}",
   "active": false,
   "status": {
     "concept_exercises": false,

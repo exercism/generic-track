@@ -1,6 +1,6 @@
 # Exercism {{LANGUAGE}} Track
 
-[![configlet](https://github.com/exercism/{{TRACK_ID}}/workflows/configlet/badge.svg)](https://github.com/exercism/{{TRACK_ID}}/actions?query=workflow%3Aconfiglet) [![tests](https://github.com/exercism/{{TRACK_ID}}/workflows/test/badge.svg)](https://github.com/exercism/{{TRACK_ID}}/actions?query=workflow%3Atest)
+[![configlet](https://github.com/exercism/{{SLUG}}/workflows/configlet/badge.svg)](https://github.com/exercism/{{SLUG}}/actions?query=workflow%3Aconfiglet) [![tests](https://github.com/exercism/{{SLUG}}/workflows/test/badge.svg)](https://github.com/exercism/{{SLUG}}/actions?query=workflow%3Atest)
 
 Exercism exercises in {{LANGUAGE}}.
 
