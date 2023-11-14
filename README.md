@@ -36,7 +36,7 @@ Exercism is a not-for-profit organization, and all the language tracks are built
 We will only create a track if there is at least one volunteer who has offered to take the lead on building it.
 
 The minimum to launch a track is:
-- 20 practice exercises (these can be based on specifications in the [problem-specifications][] repository.
+- 20 practice exercises (these can be based on specifications in the [problem-specifications][] repository).
 - Continuous integration that checks that the exercises can be solved.
 - A bit of configuration and documentation.
 
