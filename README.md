@@ -3,6 +3,7 @@
 If you wish to request a new track, **you must post in the [Support category on the Exercism Community Forum][forum-support]** to discuss this with the team.
 
 Before opening the post, it's worth considering:
+
 - Is it a programming language?
 - Does Exercism already support the language?
 - Has anyone else asked for it?
@@ -36,6 +37,7 @@ Exercism is a not-for-profit organization, and all the language tracks are built
 We will only create a track if there is at least one volunteer who has offered to take the lead on building it.
 
 The minimum to launch a track is:
+
 - 20 practice exercises (these can be based on specifications in the [problem-specifications][] repository).
 - Continuous integration that checks that the exercises can be solved.
 - A bit of configuration and documentation.
@@ -57,7 +59,8 @@ If the new track is authorized, then create a [new-issue][] in this repository, 
 
 ### One-time setup
 
-1. Install [hub][].
+1. Install the [GitHub CLI][github-cli].
+1. Login via `gh auth login`
 1. Clone the [generic-track][] repository.
 
 ### Bootstrap a Track
@@ -68,11 +71,11 @@ If the new track is authorized, then create a [new-issue][] in this repository, 
    - If the requestor is volunteering, that's fine.
    - If the requestor is volunteering someone else for the job, confirm with that person.
 
-1. Run `bin/bootstrap`
-1. Let the requestor/maintainer know that the repo is ready for them, and point them to the launch checklist issue.
+1. Run `LANGUAGE=<language> SLUG=<slug> USERNAMES=<comma,separated,list> bin/bootstrap` (e.g. `LANGUAGE=Rust SLUG=rust USERNAMES=foo,bar bin/bootstrap`)
+1. Let the requestor(s)/maintainer(s) know that the repo is ready for them, and point them to the launch checklist issue.
 
 [generic-track]: https://github.com/exercism/generic-track
-[hub]: http://github.com/github/hub
+[github-cli]: https://cli.github.com/
 [track-repositories]: https://github.com/search?q=topic%3Aexercism-track+org%3Aexercism+fork%3Atrue&type=repositories
 [exercism-tracks]: https://exercism.org/tracks
 [this-repo-issues]: https://github.com/exercism/generic-track/issues
