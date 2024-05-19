@@ -1,0 +1,20 @@
+import {unitt}!
+code:  import.lean {src/code}!
+
+
+test "I must pass" [
+    assert -> true
+]
+
+test "I must pass too" [
+    assert -> true
+    assert -> true
+]
+
+test "I must break the test" [
+    assert -> false
+]
+
+test "will fail" [
+    assert -> false
+]

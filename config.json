@@ -1,6 +1,6 @@
 {
-  "language": "{{LANGUAGE}}",
-  "slug": "{{SLUG}}",
+  "language": "Arturo",
+  "slug": "arturo",
   "active": false,
   "status": {
     "concept_exercises": false,
@@ -8,23 +8,85 @@
     "representer": false,
     "analyzer": false
   },
-  "blurb": "TODO: add blurb",
+  "blurb": "Simple, expressive, and portable, Arturo is a batteries-included language inspired by REBOL and Smalltalk.",
   "version": 3,
   "online_editor": {
     "indent_style": "space",
     "indent_size": 4
   },
+  "test_runner": {
+    "average_run_time": 2
+  },
   "files": {
-    "solution": [],
-    "test": [],
-    "example": [],
-    "exemplar": []
+    "solution": [
+      "src/%{kebab_slug}.art"
+    ],
+    "test": [
+      "tests/test-%{kebab_slug}.art",
+      "tester.art"
+    ],
+    "example": [
+      ".meta/src/example.art"
+    ],
+    "exemplar": [
+      ".meta/src/exemplar.art"
+    ]
   },
   "exercises": {
-    "concept": [],
-    "practice": []
+    "practice": [
+      {
+        "slug": "hello-world",
+        "name": "Hello World",
+        "uuid": "b8ea07f1-010b-4415-914f-de0852a048e4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      }
+    ]
   },
-  "concepts": [],
-  "key_features": [],
-  "tags": []
+  "key_features": [
+    {
+      "title": "Modern",
+      "content": "Arturo is a modern, fast-evolving language.",
+      "icon": "evolving"
+    },
+    {
+      "title": "Cross-platform",
+      "content": "Arturo runs on macOS, Linux, Windows, FreeBSD and more.",
+      "icon": "cross-platform"
+    },
+    {
+      "title": "Code is data",
+      "content": "Arturo programs can operate on their own code.",
+      "icon": "homoiconic"
+    },
+    {
+      "title": "General-purpose",
+      "content": "Arturo is suitable for a wide range of applications.",
+      "icon": "expressive"
+    },
+    {
+      "title": "Documentation",
+      "content": "Arturo has a robust documentation suite and a helpful community.",
+      "icon": "interactive"
+    },
+    {
+      "title": "Expressive",
+      "content": "Arturo is designed to be expressive and readable.",
+      "icon": "expressive"
+    }
+  ],
+  "tags": [
+    "execution_mode/compiled",
+    "execution_mode/interpreted",
+    "paradigm/functional",
+    "paradigm/procedural",
+    "platform/linux",
+    "platform/mac",
+    "platform/windows",
+    "runtime/language_specific",
+    "typing/dynamic",
+    "used_for/cross_platform_development",
+    "used_for/scripts"
+  ]
 }

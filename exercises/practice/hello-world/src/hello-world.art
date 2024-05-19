@@ -1,0 +1,4 @@
+
+hello: function[] [
+    "Hello, World!"
+]

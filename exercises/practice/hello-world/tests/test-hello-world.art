@@ -1,0 +1,9 @@
+import {unitt}!
+import {src/hello-world}!
+
+suite "Hello, World!" [
+    test "returns 'Hello, World!'" [
+        result: hello
+        assert -> "Hello, World!" = result
+    ]
+]
