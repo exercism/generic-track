@@ -1,0 +1,39 @@
+import {unitt}!
+import {src/resistor-color-duo}!
+
+suite "Resistor Color Duo" [
+    test "brown and black returns 10" [
+        result:  resistorValue ["brown" "black"]
+        assert -> 10 = result
+    ]
+
+    test.skip "blue and grey returns 68" [
+        result:  resistorValue ["blue" "grey"]
+        assert -> 68 = result
+    ]
+
+    test.skip "yellow and violet returns 47" [
+        result:  resistorValue ["yellow" "violet"]
+        assert -> 47 = result
+    ]
+
+    test.skip "white and red returns 92" [
+        result:  resistorValue ["white" "red"]
+        assert -> 92 = result
+    ]
+
+    test.skip "orange and orange returns 33" [
+        result:  resistorValue ["orange" "orange"]
+        assert -> 33 = result
+    ]
+
+    test.skip "resistorValue ignores additional colors" [
+        result:  resistorValue ["green" "brown" "orange"]
+        assert -> 51 = result
+    ]
+
+    test.skip "black and brown returns a single digit" [
+        result:  resistorValue ["black" "brown"]
+        assert -> 1 = result
+    ]
+]

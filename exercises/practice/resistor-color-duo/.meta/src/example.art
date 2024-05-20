@@ -1,0 +1,9 @@
+
+COLORS: ["black" "brown" "red" "orange" "yellow" "green" "blue" "violet" "grey" "white"]
+
+resistorValue: function [colors][
+    tens: index COLORS colors\0
+    ones: index COLORS colors\1
+    ones + tens * 10
+]
+

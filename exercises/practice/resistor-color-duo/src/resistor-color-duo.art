@@ -1,0 +1,4 @@
+
+resistorValue: function [colors][
+    panic "Please implement the resistorValue function"
+]

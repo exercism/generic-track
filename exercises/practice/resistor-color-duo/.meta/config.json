@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "src/resistor-color-duo.art"
+    ],
+    "test": [
+      "tests/test-resistor-color-duo.art",
+      "tester.art"
+    ],
+    "example": [
+      ".meta/src/example.art"
+    ]
+  },
+  "blurb": "Convert color codes, as used on resistors, to a numeric value.",
+  "source": "Maud de Vries, Erik Schierboom",
+  "source_url": "https://github.com/exercism/problem-specifications/issues/1464"
+}
