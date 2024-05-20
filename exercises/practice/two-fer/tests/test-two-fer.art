@@ -1,0 +1,19 @@
+import {unitt}!
+import {src/two-fer}!
+
+suite "Two Fer" [
+    test "no name given" [
+        result: twoFer ""
+        assert -> "One for you, one for me." = result
+    ]
+
+    test.skip "a name given" [
+        result: twoFer "Alice"
+        assert -> "One for Alice, one for me." = result
+    ]
+    
+    test.skip "another name given" [
+        result: twoFer "Bob"
+        assert -> "One for Bob, one for me." = result
+    ]
+]

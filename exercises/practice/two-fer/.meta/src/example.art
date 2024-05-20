@@ -1,0 +1,9 @@
+
+twoFer: function [
+    name
+][
+    if? name="" ->
+        twoFer "you"
+    else ->
+        "One for " ++ name ++ ", one for me."
+]

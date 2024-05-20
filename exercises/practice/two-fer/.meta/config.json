@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "src/two-fer.art"
+    ],
+    "test": [
+      "tests/test-two-fer.art",
+      "tester.art"
+    ],
+    "example": [
+      ".meta/src/example.art"
+    ]
+  },
+  "blurb": "Create a sentence of the form \"One for X, one for me.\".",
+  "source_url": "https://github.com/exercism/problem-specifications/issues/757"
+}
