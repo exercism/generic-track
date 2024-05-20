@@ -1,0 +1,5 @@
+
+isLeap?: function [year][
+    ; leap? year
+    and? (= 0 mod year 4) or? (<> 0 mod year 100) (= 0 mod year 400)
+]

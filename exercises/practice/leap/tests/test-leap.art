@@ -1,0 +1,49 @@
+import {unitt}!
+import {src/leap}!
+
+suite "Leap" [
+    test "a year not divisible by 4 is a common year" [
+        result: isLeap? 2015
+        assert -> false = result
+    ]
+
+    test.skip "a year divisible by 2 and not divisible by 4 is a common year" [
+        result: isLeap? 1970
+        assert -> false = result
+    ]
+
+    test.skip "a year divisible by 4 and not divisible by 100 is a leap year" [
+        result: isLeap? 1996
+        assert -> true = result
+    ]
+
+    test.skip "a year divisible by 4 and 5 is still a leap year" [
+        result: isLeap? 1960
+        assert -> true = result
+    ]
+    
+    test.skip "a year divisible by 100 and not divisible by 400 is a common year" [
+        result: isLeap? 2100
+        assert -> false = result
+    ]
+    
+    test.skip "a year divisible by 100 but not divisible by 3 is still not a leap year" [
+        result: isLeap? 1900
+        assert -> false = result
+    ]
+    
+    test.skip "a year divisible by 400 is a leap year" [
+        result: isLeap? 2000
+        assert -> true = result
+    ]
+    
+    test.skip "a year divisible by 400 but not by 125 is still a leap year" [
+        result: isLeap? 2400
+        assert -> true = result
+    ]
+    
+    test.skip "a year divisible by 200 and not divisible by 400 is a common year" [
+        result: isLeap? 1800
+        assert -> false = result
+    ]
+]
