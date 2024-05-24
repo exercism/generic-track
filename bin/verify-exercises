@@ -15,11 +15,16 @@
 # The path to the solution/example/exemplar files can be found in the exercise's
 # .meta/config.json file, or possibly inferred from the exercise's directory name.
 
-# Example:
+# Example: verify all exercises
 # ./bin/verify-exercises
 
+# Example: verify single exercise
+# ./bin/verify-exercises two-fer
+
+slug="${1:-*}"
+
 # Verify the Concept Exercises
-for concept_exercise_dir in ./exercises/concept/*/; do
+for concept_exercise_dir in ./exercises/concept/${slug}/; do
     if [ -d $concept_exercise_dir ]; then
         echo "Checking $(basename "${concept_exercise_dir}") exercise..."
         # TODO: run command to verify that the exemplar solution passes the tests
@@ -27,7 +32,7 @@ for concept_exercise_dir in ./exercises/concept/*/; do
 done
 
 # Verify the Practice Exercises
-for practice_exercise_dir in ./exercises/practice/*/; do
+for practice_exercise_dir in ./exercises/practice/${slug}/; do
     if [ -d $practice_exercise_dir ]; then
         echo "Checking $(basename "${practice_exercise_dir}") exercise..."
         # TODO: run command to verify that the example solution passes the tests

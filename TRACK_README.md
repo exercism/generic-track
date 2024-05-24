@@ -6,8 +6,10 @@ Exercism exercises in {{LANGUAGE}}.
 
 ## Testing
 
-To test the exercises, run `./bin/verify-exercises`.
+To test all exercises, run `./bin/verify-exercises`.
 This command will iterate over all exercises and check to see if their exemplar/example implementation passes all the tests.
+
+To test a single exercise, run `./bin/verify-exercises <exercise-slug>`.
 
 ### Track linting
 
