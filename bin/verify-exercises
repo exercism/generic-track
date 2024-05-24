@@ -16,7 +16,7 @@
 # .meta/config.json file, or possibly inferred from the exercise's directory name.
 
 # Example:
-# ./bin/test
+# ./bin/verify-exercises
 
 # Verify the Concept Exercises
 for concept_exercise_dir in ./exercises/concept/*/; do
