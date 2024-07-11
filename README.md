@@ -74,6 +74,21 @@ If the new track is authorized, then create a [new-issue][] in this repository, 
 1. Run `LANGUAGE=<language> SLUG=<slug> USERNAMES=<comma,separated,list> bin/bootstrap` (e.g. `LANGUAGE=Rust SLUG=rust USERNAMES=foo,bar bin/bootstrap`)
 1. Let the requestor(s)/maintainer(s) know that the repo is ready for them, and point them to the launch checklist issue.
 
+#### Bootstrap Test Runner (optional)
+
+1. Open a prompt in the root of the cloned [`generic-test-runner`][generic-test-runner] repo
+1. Run `LANGUAGE=<language> SLUG=<slug> bin/bootstrap.sh` (e.g. `LANGUAGE=Rust SLUG=rust bin/bootstrap.sh`)
+
+#### Bootstrap Representer (optional)
+
+1. Open a prompt in the root of the cloned [`generic-representer`][generic-representer] repo
+1. Run `LANGUAGE=<language> SLUG=<slug> bin/bootstrap.sh` (e.g. `LANGUAGE=Rust SLUG=rust bin/bootstrap.sh`)
+
+#### Bootstrap Analyzer (optional)
+
+1. Open a prompt in the root of the cloned [`generic-analyzer`][generic-analyzer] repo
+1. Run `LANGUAGE=<language> SLUG=<slug> bin/bootstrap.sh` (e.g. `LANGUAGE=Rust SLUG=rust bin/bootstrap.sh`)
+
 [generic-track]: https://github.com/exercism/generic-track
 [github-cli]: https://cli.github.com/
 [track-repositories]: https://github.com/search?q=topic%3Aexercism-track+org%3Aexercism+fork%3Atrue&type=repositories
@@ -84,3 +99,6 @@ If the new track is authorized, then create a [new-issue][] in this repository, 
 [issue-templates]: https://github.com/exercism/generic-track/blob/main/bin/bootstrap#L67-L73
 [forum-support]: https://forum.exercism.org/c/support/8
 [problem-specifications]: https://github.com/exercism/problem-specifications
+[generic-test-runner]: https://github.com/exercism/generic-test-runner
+[generic-representer]: https://github.com/exercism/generic-representer
+[generic-analyzer]: https://github.com/exercism/generic-analyzer
