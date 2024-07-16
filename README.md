@@ -51,9 +51,9 @@ If the new track is authorized, then create a [new-issue][] in this repository, 
 
 ---
 
-# Notes
+# Instructions for Exercism Admins
 
-**Only owners of the organization can create new repositories.**
+**This section is not relevant for maintainers. Please do not try and bootstrap repos yourselves. It won't work. Follow the instructions above and we will sort things for you.**
 
 ## How to bootstrap a new track
 
