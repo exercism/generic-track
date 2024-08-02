@@ -13,6 +13,7 @@ The next steps are:
 - [ ] [Build test runner](https://exercism.org/docs/building/tracks/new/build-test-runner)
 - [ ] [Configure tooling](https://exercism.org/docs/building/tracks/new/configure-tooling)
 - [ ] [Prepare for launch](https://exercism.org/docs/building/tracks/new/prepare-for-launch)
+- [ ] [Test track](https://exercism.org/docs/building/tracks/new/test-track)
 - [ ] [Find Maintainers](https://exercism.org/docs/building/tracks/new/find-maintainers)
 - [ ] [Launch!](https://exercism.org/docs/building/tracks/new/launch)
 - [ ] [Enable syntax highlighting](https://exercism.org/docs/building/tracks/new/enable-syntax-highlighting)
