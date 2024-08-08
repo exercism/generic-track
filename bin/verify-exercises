@@ -22,7 +22,8 @@ required_tool() {
 required_tool jq
 
 copy_example_or_examplar_to_solution() {
-    jq -c '[.files.solution, .files.exemplar // .files.example] | transpose | map({src: .[1], dst: .[0]}) | .[]' .meta/config.json | while read -r src_and_dst; do
+    jq -c '[.files.solution, .files.exemplar // .files.example] | transpose | map({src: .[1], dst: .[0]}) | .[]' .meta/config.json \
+    | while read -r src_and_dst; do
         cp "$(echo "${src_and_dst}" | jq -r '.src')" "$(echo "${src_and_dst}" | jq -r '.dst')"
     done
 }
