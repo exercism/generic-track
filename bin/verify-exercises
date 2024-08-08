@@ -62,6 +62,7 @@ verify_exercise() {
     echo "Verifying ${slug} exercise..."
 
     (
+        trap 'rm -rf "$tmp_dir"' EXIT    # remove tempdir when subshell ends
         cp -r "${dir}/." "${tmp_dir}"
         cd "${tmp_dir}"
 
