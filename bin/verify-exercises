@@ -75,8 +75,11 @@ verify_exercise() {
 exercise_slug="${1:-*}"
 
 shopt -s nullglob
+count=0
 for exercise_dir in ./exercises/{concept,practice}/${exercise_slug}/; do
-    if [ -d "${exercise_dir}" ]; then
+    if [[ -d "${exercise_dir}" ]]; then
         verify_exercise "${exercise_dir}"
+        ((++count))
     fi
 done
+((count > 0)) || die 'no matching exercises found!'
