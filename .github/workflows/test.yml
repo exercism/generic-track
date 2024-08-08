@@ -1,7 +1,5 @@
-# This workflow will do a clean install of the dependencies and run tests across different versions
+# This workflow will verify the exercises in the repository.
 #
-# Replace <track> with the track name
-# Replace <image-name> with an image to run the jobs on
 # Replace <action to setup tooling> with a github action to setup tooling on the image
 # Replace <install dependencies> with a cli command to install the dependencies
 #
@@ -13,7 +11,7 @@
 # Requires scripts:
 # - bin/verify-exercises
 
-name: <track> / Test
+name: Test
 
 on:
   push:
@@ -22,18 +20,23 @@ on:
   workflow_dispatch:
 
 jobs:
-  ci:
-    runs-on: <image-name>
+  verify_exercises:
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
 
-      - name: Use <setup tooling>
-        uses: <action to setup tooling>
+      # TODO: setup any tooling that is required to run the tests.
+      # E.g. install a specific version of a programming language
+      # E.g. install packages via apt/apk/yum/etc.
+      # - name: Use <setup tooling>
+      #   uses: <action to setup tooling>
 
-      - name: Install project dependencies
-        run: <install dependencies>
+      # TODO: install any dependencies.
+      # E.g. npm install, bundle install, etc.
+      # - name: Install project dependencies
+      #   run: <install dependencies>
 
       - name: Verify all exercises
         run: bin/verify-exercises
