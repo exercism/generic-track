@@ -112,6 +112,8 @@ repo_options = {
   :homepage => "https://exercism.org/tracks/%s" % slug,
   :has_projects => false,
   :has_wiki => false,
+  :allow_merge_commit => false,
+  :allow_rebase_merge => false
 }
 repo = client.edit_repository("exercism/%s" % slug, repo_options)
 
