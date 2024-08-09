@@ -119,6 +119,38 @@ repo = client.edit_repository("exercism/%s" % slug, repo_options)
 
 client.put('/repos/exercism/%s/topics' % slug, {names: ["exercism-track"], accept: 'application/vnd.github.mercy-preview+json'})
 
+ruleset_options = {
+  name: "Default branch",
+  target: "branch",
+  enforcement: "active",
+  conditions: {
+    ref_name: {
+      include: ["~DEFAULT_BRANCH"],
+      exclude:[]
+    }
+  },
+  rules: [
+    {
+      type: "pull_request",
+      parameters: {
+        dismiss_stale_reviews_on_push: false,
+        require_code_owner_review: true,
+        require_last_push_approval: false,
+        required_approving_review_count: 0,
+        required_review_thread_resolution: false
+      }
+    }
+  ],
+  bypass_actors: [
+    {
+      actor_id: 1, 
+      actor_type: "OrganizationAdmin", 
+      bypass_mode: "always"
+    }
+  ]
+}
+client.post('/repos/exercism/%s/rulesets' % slug, ruleset_options)
+
 team_options = {
   :name => slug,
   :description => "Maintainers of the Exercism %s track" % language,
