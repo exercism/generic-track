@@ -30,6 +30,7 @@ copy_example_or_examplar_to_solution() {
 }
 
 pull_docker_image() {
+    # shellcheck disable=SC1083
     docker pull exercism/{{SLUG}}-test-runner ||
         die $'Could not find the `exercism/{{SLUG}}-test-runner` Docker image.\nCheck the test runner docs at https://exercism.org/docs/building/tooling/test-runners for more information.'
 }
@@ -38,6 +39,7 @@ run_tests() {
     local slug
     slug="${1}"
 
+    # shellcheck disable=SC1083
     docker run \
         --rm \
         --network none \
