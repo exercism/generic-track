@@ -45,10 +45,10 @@ system("rm -rf %s" % File.join(dir, ".git"))
 system("rm -rf %s" % File.join(dir, "Gemfile"))
 system("rm -rf %s" % File.join(dir, "Gemfile.lock"))
 system("rm -rf %s" % File.join(dir, ".ruby-version"))
-system("rm -rf %s" % File.join(dir, "bin/bootstrap"))
-system("rm -rf %s" % File.join(dir, ".github/ISSUE_TEMPLATE.md"))
-system("rm -rf %s" % File.join(dir, ".github/workflows/pause-community-contributions.yml"))
-system("rm -rf %s" % File.join(dir, ".github/workflows/shellcheck.yml"))
+system("rm -rf %s" % File.join(dir, "bin", "bootstrap"))
+system("rm -rf %s" % File.join(dir, ".github", "ISSUE_TEMPLATE.md"))
+system("rm -rf %s" % File.join(dir, ".github", "workflows", "pause-community-contributions.yml"))
+system("rm -rf %s" % File.join(dir, ".github", "workflows", "shellcheck.yml"))
 system("mv %s/TRACK_README.md %s/README.md" % [dir, dir])
 
 f = File.join(dir, 'LICENSE')
@@ -61,6 +61,14 @@ f = File.join(dir, 'docs', 'config.json')
 contents = File.read(f)
 File.open(f, "w") do |f|
   f.write contents.gsub('{{UUID}}') {|m| SecureRandom.uuid }
+end
+
+%w[verify-exercises verify-exercises-in-docker].each do |name|
+  f = File.join(dir, 'bin', name)
+  contents = File.read(f)
+  File.open(f, "w") do |f|
+    f.write contents.gsub(/^\s*# shellcheck.*?\n/, '')
+  end
 end
 
 [
