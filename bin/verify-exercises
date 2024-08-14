@@ -29,6 +29,7 @@ copy_example_or_examplar_to_solution() {
 }
 
 unskip_tests() {
+    # shellcheck disable=SC2034
     jq -r '.files.test[]' .meta/config.json | while read -r test_file; do
         noop # TODO: replace this with the command to unskip the tests.
         # Note: this function runs from within an exercise directory.
