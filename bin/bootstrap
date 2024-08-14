@@ -66,6 +66,7 @@ end
   "config.json",
   "README.md",
   "CHECKLIST.md",
+  File.join("bin", "verify-exercises-in-docker"),
   File.join("docs", "config.json")
 ].each do |name|
   f = File.join(dir, name)

@@ -11,6 +11,18 @@ This command will iterate over all exercises and check to see if their exemplar/
 
 To test a single exercise, run `./bin/verify-exercises <exercise-slug>`.
 
+### Using Docker
+
+If your track has a working [test runner](https://exercism.org/docs/building/tooling/test-runners), the `./bin/verify-exercises-in-docker` script can also be used to test all exercises.
+This script pulls (_downloads_) the test runner's [Docker image](https://exercism.org/docs/building/tooling/test-runners/docker) and then uses Docker to run that image to test an exercise.
+
+```exercism/note
+The main benefit of this approach is that it best mimics how exercises are tested in production (on the website).
+Another benefit is that you don't have to install track-specific dependencies (e.g. an SDK) locally, you just need Docker installed.
+```
+
+To test a single exercise, run `./bin/verify-exercises-in-docker <exercise-slug>`.
+
 ### Track linting
 
 [`configlet`](https://exercism.org/docs/building/configlet) is an Exercism-wide tool for working with tracks. You can download it by running:
