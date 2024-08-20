@@ -23,7 +23,7 @@ Another benefit is that you don't have to install track-specific dependencies (e
 
 To test a single exercise, run `./bin/verify-exercises-in-docker <exercise-slug>`.
 
-### Track linting
+### Linting
 
 [`configlet`](https://exercism.org/docs/building/configlet) is an Exercism-wide tool for working with tracks. You can download it by running:
 
@@ -31,7 +31,7 @@ To test a single exercise, run `./bin/verify-exercises-in-docker <exercise-slug>
 $ ./bin/fetch-configlet
 ```
 
-Run its [`lint` command](https://exercism.org/docs/building/configlet/lint) to verify if all exercises have all the necessary files and if config files are correct:
+Run its [`lint` command](https://exercism.org/docs/building/configlet/lint) to verify if exercises have the required files and if config files are correct:
 
 ```shell
 $ ./bin/configlet lint
@@ -52,4 +52,18 @@ Basic linting finished successfully:
 - Every practice exercise has a valid .meta/config.json file
 - Required track docs are present
 - Required shared exercise docs are present
+```
+
+## Adding exercises
+
+New (practice) exercises can be added via:
+
+```shell
+bin/add-practice-exercise <exercise-slug>
+```
+
+Optionally, you can also specify the exercise's difficulty (via `-d`) and/or author's GitHub username (via `-a`):
+
+```shell
+bin/add-practice-exercise -a foobar -d 3 <exercise-slug>
 ```
