@@ -71,23 +71,23 @@ If the new track is authorized, then create a [new-issue][] in this repository, 
    - If the requestor is volunteering, that's fine.
    - If the requestor is volunteering someone else for the job, confirm with that person.
 
-1. Run `LANGUAGE=<language> SLUG=<slug> USERNAMES=<comma,separated,list> bin/bootstrap` (e.g. `LANGUAGE=Rust SLUG=rust USERNAMES=foo,bar bin/bootstrap`)
+1. Run `LANGUAGE=<language> SLUG=<slug> USERNAMES=<comma,separated,list> bin/bootstrap` (e.g. `LANGUAGE="Common Lisp" SLUG="common-lisp" USERNAMES="foo,bar" bin/bootstrap`)
 1. Let the requestor(s)/maintainer(s) know that the repo is ready for them, and point them to the launch checklist issue.
 
 #### Bootstrap Test Runner (optional)
 
 1. Open a prompt in the root of the cloned [`generic-test-runner`][generic-test-runner] repo
-1. Run `LANGUAGE=<language> SLUG=<slug> bin/bootstrap.sh` (e.g. `LANGUAGE=Rust SLUG=rust bin/bootstrap.sh`)
+1. Run `LANGUAGE=<language> SLUG=<slug> bin/bootstrap.sh` (e.g. `LANGUAGE="Common Lisp" SLUG="common-lisp" bin/bootstrap.sh`)
 
 #### Bootstrap Representer (optional)
 
 1. Open a prompt in the root of the cloned [`generic-representer`][generic-representer] repo
-1. Run `LANGUAGE=<language> SLUG=<slug> bin/bootstrap.sh` (e.g. `LANGUAGE=Rust SLUG=rust bin/bootstrap.sh`)
+1. Run `LANGUAGE=<language> SLUG=<slug> bin/bootstrap.sh` (e.g. `LANGUAGE="Common Lisp" SLUG="common-lisp" bin/bootstrap.sh`)
 
 #### Bootstrap Analyzer (optional)
 
 1. Open a prompt in the root of the cloned [`generic-analyzer`][generic-analyzer] repo
-1. Run `LANGUAGE=<language> SLUG=<slug> bin/bootstrap.sh` (e.g. `LANGUAGE=Rust SLUG=rust bin/bootstrap.sh`)
+1. Run `LANGUAGE=<language> SLUG=<slug> bin/bootstrap.sh` (e.g. `LANGUAGE="Common Lisp" SLUG="common-lisp" bin/bootstrap.sh`)
 
 [generic-track]: https://github.com/exercism/generic-track
 [github-cli]: https://cli.github.com/
