@@ -75,6 +75,7 @@ end
   "config.json",
   "README.md",
   "CHECKLIST.md",
+  "CONTRIBUTING.md",
   File.join("bin", "verify-exercises-in-docker"),
   File.join("docs", "config.json")
 ].each do |name|
