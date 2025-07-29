@@ -14,7 +14,7 @@ on:
 jobs:
   verify_exercises:
     # TODO: replace with another image if required to run the tests (optional)
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout repository
