@@ -21,7 +21,7 @@ required_tool() {
 
 required_tool jq
 
-copy_example_or_examplar_to_solution() {
+copy_example_or_exemplar_to_solution() {
     jq -c '[.files.solution, .files.exemplar // .files.example] | transpose | map({src: .[1], dst: .[0]}) | .[]' .meta/config.json \
     | while read -r src_and_dst; do
         cp "$(jq -r '.src' <<< "${src_and_dst}")" "$(jq -r '.dst' <<< "${src_and_dst}")"
@@ -68,7 +68,7 @@ verify_exercise() {
         cp -r "${dir}/." "${tmp_dir}"
         cd "${tmp_dir}"
 
-        copy_example_or_examplar_to_solution
+        copy_example_or_exemplar_to_solution
         unskip_tests
         run_tests
     )
