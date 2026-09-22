@@ -22,8 +22,8 @@ unless system("gh --version")
   STDERR.puts "\nYou need to install gh. See https://cli.github.com/."
   exit 1
 end
-unless system("gh auth status")
-  # Not tested. I'm just assuming it will return non-zero status if not logged in.
+# Check the token works with a call any token can make, including a GitHub App token (which has no user)
+unless system("gh api rate_limit --silent")
   STDERR.puts("\nYou need to authenticate. Run 'gh auth login'.")
   exit 1
 end
@@ -169,8 +169,13 @@ team_options = {
   :parent_team_id => 1399433,
 }
 team = client.create_team('exercism', team_options.merge(accept: 'application/vnd.github.hellcat-preview+json'))
-user = client.get("/user")
-client.delete("/orgs/exercism/teams/#{slug}/memberships/#{user.login}")
+# Creating a team adds the person who created it. A GitHub App token has no user, so nothing needs removing.
+user = begin
+  client.get("/user")
+rescue Octokit::Forbidden
+  nil
+end
+client.delete("/orgs/exercism/teams/#{slug}/memberships/#{user.login}") if user
 client.add_team_repository(team.id, 'exercism/%s' % slug, permission: 'push')
 
 maintainers_admin_team = client.get('/orgs/exercism/teams/maintainers-admin')
